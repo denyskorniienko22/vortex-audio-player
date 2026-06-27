@@ -1,0 +1,6 @@
+export { default as FavoriteAudiosPage } from "./favorite-audios"
+export { default as HomePage } from "./home-page"
+export { default as LoginPage } from "./login-page"
+export { default as RegistrationPage } from "./registration-page"
+export { default as UserPlaylistAudiosPage } from "./user-playlist-audios-page"
+export { default as UserPlaylistsPage } from "./user-playlists-page"
