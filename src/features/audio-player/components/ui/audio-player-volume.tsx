@@ -6,7 +6,11 @@ import { cn } from "@/lib/utils"
 
 import { useAudio } from "../../provider/audio-player-provider"
 
-const AudioPlayerVolume = () => {
+interface IAudioPlayerVolumeProps {
+  isExpanded: boolean
+}
+
+const AudioPlayerVolume = ({ isExpanded }: IAudioPlayerVolumeProps) => {
   const { volume, isMuted, handleToggleMuteAudio, handleChangeVolume } =
     useAudio()
 
@@ -15,7 +19,15 @@ const AudioPlayerVolume = () => {
       className={cn(
         "hidden",
         "w-1/2",
-        "md:flex md:items-center md:justify-end md:gap-2 md:justify-self-end",
+        "md:flex md:items-center md:justify-end md:gap-2 md:justify-self-end md:w-48",
+        "lg:w-64",
+        isExpanded &&
+          `
+            flex items-center gap-2
+            w-full
+            px-3
+            xsm:w-72
+          `,
       )}
     >
       <Button
@@ -27,6 +39,7 @@ const AudioPlayerVolume = () => {
           "text-zinc-300",
           "group cursor-pointer",
           "hover:text-foreground",
+          "active:bg-accent/8",
         )}
       >
         {isMuted ? (
@@ -41,7 +54,7 @@ const AudioPlayerVolume = () => {
         max={1}
         step={0.01}
         onValueChange={handleChangeVolume}
-        className={cn("w-24", "cursor-pointer")}
+        className={cn("w-full", "cursor-pointer")}
       />
     </div>
   )

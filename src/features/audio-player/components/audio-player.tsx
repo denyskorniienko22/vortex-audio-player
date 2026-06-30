@@ -81,7 +81,7 @@ const AudioPlayer = () => {
             className={cn("max-w-lg", "xs:hidden", "md:flex")}
           />
         </section>
-        <AudioPlayerVolume />
+        <AudioPlayerVolume isExpanded={isExpanded} />
       </div>
 
       <Drawer open={isExpanded} onOpenChange={setIsExpanded}>

@@ -39,11 +39,13 @@ const AudioPlayerControls = ({ isExpanded }: IAudioPlayerControlsProps) => {
         onClick={onClick}
         className={cn(
           "cursor-pointer transition-colors",
+          "active:bg-accent/8",
+          isSecondary && "xs:p-5 md:p-0",
           isSecondary
             ? isActive
-              ? "text-green-500 hover:text-green-400"
-              : "text-zinc-400 hover:text-foreground hover:bg-accent"
-            : "text-zinc-400 hover:text-foreground hover:bg-accent",
+              ? "bg-accent/8 text-accent"
+              : "text-zinc-400 hover:text-foreground hover:bg-accent/8"
+            : "text-zinc-400 hover:text-foreground hover:bg-accent/8",
           !isExpanded && hideOnMobileClass,
         )}
       >
@@ -75,7 +77,7 @@ const AudioPlayerControls = ({ isExpanded }: IAudioPlayerControlsProps) => {
           "text-foreground",
           "transition-transform",
           "cursor-pointer",
-          "active:scale-95",
+          "active:scale-90",
           isExpanded ? "size-16" : "size-10 hover:scale-105 hover:bg-zinc-200",
         )}
       >

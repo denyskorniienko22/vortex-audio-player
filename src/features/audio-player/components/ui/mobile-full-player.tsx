@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-import { AudioPlayerControls,AudioPlayerTimeline } from "./"
+import { AudioPlayerControls, AudioPlayerTimeline, AudioPlayerVolume } from "./"
 
 interface IMobileFullPlayerProps {
   audio_img: string
@@ -14,15 +14,16 @@ const MobileFullPlayer = ({
   title,
 }: IMobileFullPlayerProps) => {
   return (
-    <div className={cn("flex flex-col gap-4", "p-3")}>
-      <section className="flex flex-col items-start gap-3">
+    <div className={cn("flex flex-col gap-6", "p-3")}>
+      <section className="flex flex-col items-start gap-6">
         <div
           className={cn(
             "shrink-0 self-center",
-            "w-60 rounded-md",
+            "w-54 rounded-md",
             "bg-zinc-800 shadow-md",
             "border border-accent/1",
             "overflow-hidden",
+            "shadow-[0_0_15px_rgba(255,255,255,0.15)]",
           )}
         >
           <img
@@ -50,6 +51,7 @@ const MobileFullPlayer = ({
       >
         <AudioPlayerTimeline />
         <AudioPlayerControls isExpanded />
+        <AudioPlayerVolume isExpanded />
       </section>
     </div>
   )
