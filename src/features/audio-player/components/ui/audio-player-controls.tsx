@@ -40,6 +40,7 @@ const AudioPlayerControls = ({ isExpanded }: IAudioPlayerControlsProps) => {
         className={cn(
           "cursor-pointer transition-colors",
           "active:bg-accent/8",
+          isExpanded && !isSecondary && "xs:p-5 md:p-0",
           isSecondary && "xs:p-5 md:p-0",
           isSecondary
             ? isActive
