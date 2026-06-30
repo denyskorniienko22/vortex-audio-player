@@ -8,6 +8,8 @@ import {
   AudioPlayerVolume,
   MobileFullPlayer,
 } from "./ui"
+import CurrentAudioImage from "./ui/current-audio-image"
+import CurrentAudioMeta from "./ui/current-audio-meta"
 
 const AudioPlayer = () => {
   const {
@@ -38,33 +40,16 @@ const AudioPlayer = () => {
         )}
       >
         <section className={cn("flex items-center gap-3")}>
-          <div
-            className={cn(
-              "shrink-0",
-              "size-14 rounded-md",
-              "bg-zinc-800 shadow-md",
-              "overflow-hidden",
-            )}
-          >
-            <img
-              src={currentAudio.audio_img}
-              alt={`${currentAudio.title} cover`}
-              className="size-full object-cover"
-            />
-          </div>
-          <div>
-            <h4
-              className={cn(
-                "text-base font-semibold text-zinc-100",
-                "truncate",
-              )}
-            >
-              {currentAudio.title}
-            </h4>
-            <p className={cn("text-xs text-zinc-400", "truncate")}>
-              {currentAudio.author_name}
-            </p>
-          </div>
+          <CurrentAudioImage
+            audio_img={currentAudio.audio_img}
+            alt={`${currentAudio.title} cover`}
+            isExpanded={isExpanded}
+          />
+          <CurrentAudioMeta
+            title={currentAudio.title}
+            author_name={currentAudio.author_name}
+            isExpanded={isExpanded}
+          />
         </section>
 
         <section
