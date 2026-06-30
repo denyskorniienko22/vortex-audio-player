@@ -40,6 +40,8 @@ const AudioItem = ({
         "transition-all duration-300",
         "group overflow-hidden cursor-pointer",
         "hover:bg-accent/5",
+        "xs:p-1.5",
+        "xl:p-3",
         (isCurrentAudio || isMenuOpen) && "bg-accent/10 border-accent/50",
       )}
     >
@@ -75,6 +77,8 @@ const AudioItem = ({
             onClick={(event) => event.stopPropagation()}
             className={cn(
               "absolute right-5 top-5 z-10",
+              "xs:right-2.5 xs:top-2.5",
+              "xl:right-5 xl:top-5",
               isMenuOpen || isCurrentAudio
                 ? `
                     opacity-100
