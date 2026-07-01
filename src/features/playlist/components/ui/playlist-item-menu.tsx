@@ -27,7 +27,7 @@ const PlaylistItemMenu = ({
     <DropdownMenu open={open} onOpenChange={onOpenChange}>
       <DropdownMenuTrigger>
         <Button
-          className={cn("cursor-pointer", open && "flex")}
+          className={cn("rounded-full", "cursor-pointer", open && "flex")}
           size="icon-lg"
           variant="secondary"
           data-exclude-click="true"
