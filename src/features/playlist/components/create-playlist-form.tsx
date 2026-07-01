@@ -29,7 +29,7 @@ const CreatePlaylistForm = () => {
         name="intent"
         value={PLAYLIST_INTENT.CREATE_PLAYLIST}
       />
-      <div className="grid gap-2">
+      <div className={cn("grid gap-2")}>
         <div className="relative">
           <Captions
             className={cn(
@@ -73,12 +73,14 @@ const CreatePlaylistForm = () => {
         {isSubmitting ? (
           <>
             <Spinner />
-            Creating...
+            <span>Creating...</span>
           </>
         ) : (
           <>
             <ListPlus />
-            Create playlist
+            <span className={cn("text-sm", "xs:text-xs", "xsm:text-sm")}>
+              Create playlist
+            </span>
           </>
         )}
       </Button>
