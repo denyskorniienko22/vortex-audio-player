@@ -15,8 +15,14 @@ const AudiosViewLayout = ({
 }: IAudiosViewLayoutProps) => {
   return (
     <section className={cn("grid gap-3 flex-1")}>
-      <div className="flex items-center gap-3">
-        <h1 className="text-2xl font-black tracking-tight uppercase">
+      <div
+        className={cn(
+          "flex items-center gap-3",
+          "xs:flex-col xs:gap-1.5 xs:items-start",
+          "xsm:flex-row xsm:gap-3 xsm:items-center",
+        )}
+      >
+        <h1 className={cn("text-2xl font-black tracking-tight uppercase")}>
           {title}
         </h1>
         <span
